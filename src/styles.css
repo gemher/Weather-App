@@ -1,0 +1,42 @@
+body {
+  font-family: "Noto Sans", sans-serif;
+  font-size: 20px;
+  padding: 100px 400px 0;
+  color: #2b2b2b;
+}
+#city-input {
+  font-family: "Noto Sans", sans-serif;
+  font-size: 20px;
+  color: #5b5b5b;
+  margin: 20px 20px 0;
+}
+#current-location {
+  margin: 10px 20px 0;
+}
+h1,
+h2,
+h3 {
+  text-align: center;
+}
+.forecast {
+  margin: 10px 0 10px 0;
+}
+.card-body {
+  background: #ace0f9;
+  border-radius: 5px;
+  border-style: none;
+}
+.week {
+  text-align: center;
+  font-size: smaller;
+  background: linear-gradient(to top, #ace0f9 0%, #fff1eb 100%);
+}
+.days {
+  text-align: center;
+  word-spacing: 5rem;
+  padding: 10px 0 5px 0;
+}
+.current {
+  text-align: center;
+  padding: 34px 0 0;
+}
