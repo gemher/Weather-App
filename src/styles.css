@@ -3,6 +3,10 @@ body {
   font-size: 20px;
   padding: 100px 400px 0;
   color: #2b2b2b;
+  background-image: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/028/324/original/Horizon.png?1646115217);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-attachment: fixed;
 }
 #city-input {
   font-family: "Noto Sans", sans-serif;
