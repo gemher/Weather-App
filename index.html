@@ -21,15 +21,20 @@
     <div class="container">
       <div class="card">
         <div class="card-body">
-          <div class="row">
-            <div class="col-6">
+          <div class="row justify-content-between">
+            <div class="col-4">
           <form id="city-search-form">
               <input type="text" id="city-input" placeholder="Find city" autocomplete="off"/><input type="submit" value="Search" id="city-submit" />
             </form>
               </div>
+              <div class="col-4" id="icon">
+                  Icon
+                </div>
             <div><button type="button" class="btn btn-primary btn-sm" id="current-location">Current location</button></div>
             <h1 id = "degrees">Search city temperatureº</h1>
-              <h2>🌡</h2>
+              <div class="float-right">
+            <strong id="city">🌡</strong><span class="units">C | <a href="#">F</a></span>
+            </div>
               <div><ul>
                 <li>
                 Wind Speed:
