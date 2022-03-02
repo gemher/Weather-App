@@ -18,9 +18,17 @@ body {
   margin: 10px 20px 0;
 }
 h1,
-h2,
+h2 {
+  text-align: right;
+}
 h3 {
-  text-align: center;
+  text-align: left;
+}
+ul {
+  list-style: none;
+}
+#time-stamp {
+  font-size: 15px;
 }
 .forecast {
   margin: 10px 0 10px 0;
