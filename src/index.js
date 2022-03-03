@@ -46,5 +46,14 @@ function displayFahrenheitTemp(event) {
   tempElement.innerHTML = Math.round(fahrenheitTemp);
 }
 
+function displayCelsiusTemp(event) {
+  event.preventDefault();
+  let tempElement = document.querySelector("#degrees");
+  tempElement.innerHTML = Math.round(celsiusTemp);
+}
+
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
+
+let celsiusLink -document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemp);
