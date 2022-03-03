@@ -41,6 +41,8 @@ form.addEventListener("submit", search);
 
 function displayFahrenheitTemp(event) {
   event.preventDefault();
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
   let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
   let tempElement = document.querySelector("#degrees");
   tempElement.innerHTML = Math.round(fahrenheitTemp);
@@ -48,6 +50,8 @@ function displayFahrenheitTemp(event) {
 
 function displayCelsiusTemp(event) {
   event.preventDefault();
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
   let tempElement = document.querySelector("#degrees");
   tempElement.innerHTML = Math.round(celsiusTemp);
 }

@@ -54,3 +54,6 @@ ul {
   text-align: center;
   padding: 34px 0 0;
 }
+a {
+  text-decoration: none;
+}
