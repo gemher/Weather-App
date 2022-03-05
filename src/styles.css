@@ -57,3 +57,6 @@ ul {
 a {
   text-decoration: none;
 }
+.weather-temp .active {
+  color: #2b2b2b;
+}

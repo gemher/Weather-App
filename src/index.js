@@ -28,10 +28,18 @@ function search(event) {
 function showTemp(response) {
   let temperature = Math.round(celsiusTemp);
   let h1 = document.querySelector("#degrees");
+  let iconElement = document.querySelector("#icon");
+  let descriptionElement = document.querySelector("#description");
 
   celsiusTemp = response.data.main.temp;
 
   h1.innerHTML = `${temperature}ºC`;
+  descriptionElement.innerHTML = response.data.weather[0].description;
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 let celsiusTemp = null;
@@ -61,3 +69,5 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemp);
+
+search("Santa Monica");

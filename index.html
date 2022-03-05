@@ -26,19 +26,17 @@
           <form id="city-search-form">
               <input type="text" id="city-input" placeholder="Find city" autocomplete="off"/><input type="submit" value="Search" id="city-submit" />
             </form>
-              </div>
-              <div class="col-4" id="icon">
-                  Icon
-                </div>
+              </div> 
             <div><button type="button" class="btn btn-primary btn-sm" id="current-location">Current location</button></div>
             
             <h1 id = "degrees">Search city temperature</h1>
-            <div class="float-right">
-            <h2 ><strong id="city">🌡</strong><span class="units"><a href="#" id="celsius-link"> ºC</a> | <a href="#" id="fahrenheit-link">ºF</a></span></h2>
+            <div class="weather-temp">
+            <h2 ><strong id="city">🌡</strong><span class="units"><a href="#" id="celsius-link" class="active"> ºC</a> | <a href="#" id="fahrenheit-link">ºF</a></span></h2>
             </div>
               <div><ul>
+                <img src="" alt="scattered clouds" id="icon" />
                 <li>
-                Wind Speed:
+                Wind Speed: <span id="winds"></span>
               </li>
               <li id="description"></li>
               <li id="time-stamp">Last Updated:</li>
@@ -75,3 +73,4 @@
     <script src="src/index.js"></script>
   </body>
 </html>
+  
