@@ -35,7 +35,7 @@ function showTemp(response) {
   let h1 = document.querySelector("#degrees");
   let iconElement = document.querySelector("#icon");
   let descriptionElement = document.querySelector("#description");
-  let windElement = document.querySelector("winds");
+  let windElement = document.querySelector("#winds");
   let city = document.querySelector("#city");
 
   celsiusTemp = response.data.main.temp;
