@@ -20,8 +20,13 @@ function search(event) {
   let cityName = document.querySelector("#city-input");
   let city = document.querySelector("#city");
   city.innerHTML = cityName.value;
+
+  searchCity(cityName.value);
+}
+
+function searchCity(city) {
   let apiKey = "021be1bf6bbbf0a54cf5f03d5e6f32ee";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName.value}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(`${apiUrl}&appid=${apiKey}`).then(showTemp);
 }
 
@@ -30,10 +35,12 @@ function showTemp(response) {
   let h1 = document.querySelector("#degrees");
   let iconElement = document.querySelector("#icon");
   let descriptionElement = document.querySelector("#description");
+  let city = document.querySelector("#city");
 
   celsiusTemp = response.data.main.temp;
 
   h1.innerHTML = `${temperature}ºC`;
+  city.innerHTML = response.data.name;
   descriptionElement.innerHTML = response.data.weather[0].description;
   iconElement.setAttribute(
     "src",
@@ -70,4 +77,4 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemp);
 
-search("Santa Monica");
+searchCity("Santa Monica");
