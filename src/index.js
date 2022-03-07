@@ -35,6 +35,7 @@ function showTemp(response) {
   let h1 = document.querySelector("#degrees");
   let iconElement = document.querySelector("#icon");
   let descriptionElement = document.querySelector("#description");
+  let windElement = document.querySelector("winds");
   let city = document.querySelector("#city");
 
   celsiusTemp = response.data.main.temp;
@@ -42,6 +43,7 @@ function showTemp(response) {
   h1.innerHTML = `${temperature}ºC`;
   city.innerHTML = response.data.name;
   descriptionElement.innerHTML = response.data.weather[0].description;
+  windElement.innerHTML = Math.round(response.data.wind.speed);
   iconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
