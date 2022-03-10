@@ -34,6 +34,29 @@ function getForecast(coordinates) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
 }
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  let weekdays = ["one", "two", "three", "four", "five"];
+  weekdays.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+      <div class="col-2 days">
+      <div class="weather-forecast-date">${day}</div>
+          <span class="forecast-max">
+          57°
+          </span>
+          <span class="forecast-min">
+          46°
+          </span>
+      </div>
+  </div>
+  </div>`;
+  });
+  forecastHTML = `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
 
 function showTemp(response) {
   let temperature = Math.round(celsiusTemp);
@@ -87,3 +110,4 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemp);
 
 searchCity("Santa Monica");
+displayForecast();

@@ -27,7 +27,7 @@
               <input type="text" id="city-input" placeholder="Find city" autocomplete="off"/><input type="submit" value="Search" id="city-submit" />
             </form>
               </div> 
-            <div><button type="button" class="btn btn-primary btn-sm" id="current-location">Current location</button></div>
+            <div><button type="button" class="btn btn-primary btn-sm" id="current-location">Find my location</button></div>
             
             <h1 id = "degrees">Search city temperature</h1>
             <div class="weather-temp">
@@ -36,34 +36,36 @@
               <div><ul>
                 <img src="" alt="scattered clouds" id="icon" />
                 <li>
-                Wind Speed:<span id="winds"> </span>
+                Wind Speed: <span id="winds"></span>
               </li>
               <li id="description"></li>
               <li id="time-stamp">Last Updated:</li>
               </ul>
               </div>
-              <h3>Local Time</h3>
-            
+              <h3>Local Time</h3> 
           </div>
           
-            <div class="col forecast">Weekly Forecast</div>
-          
-            <div class="card week">
+            <div class="card week" id="forecast">
             <div class="row">
-                <div class="col-1.7 days">
-                    Sun
+                <div class="col-2 days">
+                  <div class="weather-forecast-date">Sun
                     Mon
                     Tue
                     Wed
                     Thu
-                    Fri
-                    <br/>
-                    57° 46° 57° 55° 65° 64°
-                    <br/>
-                    <lighter>30° 37° 35° 33° 41° 53°</lighter>
+                    Fri</div>
+                  <div class="weather-forecast-temp"> 
+                    <span class="forecast-max">
+                      57°
+                    </span>
+                    <span class="forecast-min">
+                      46°
+                    </span>
+                  </div>  
                 </div>
             </div>
             </div>
+            
             </div>
           </div>
         </div>
