@@ -34,25 +34,49 @@ function getForecast(coordinates) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
 }
-function displayForecast() {
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = [
+    "SUNDAY",
+    "MONDAY",
+    "TUESDAY",
+    "WEDNESDAY",
+    "THURSDAY",
+    "FRIDAY",
+    "SATURDAY"
+  ];
+
+  return days[day];
+}
+function displayForecast(response) {
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
-  let weekdays = ["one", "two", "three", "four", "five"];
-  weekdays.forEach(function (day) {
+
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+function displayForecast(response) {
+  let forecast = response.data.daily;
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+
+  forecast.forEach(function (forecastDay) {
     forecastHTML =
       forecastHTML +
       `
       <div class="col-2 days">
-      <div class="weather-forecast-date">${day}</div>
+      <div class="weather-forecast-date">${forecastDay.dt}</div>
           <span class="forecast-max">
-          57°
+          ${Math.round(forecastDay.temp.max)}
           </span>
           <span class="forecast-min">
-          46°
+          ${Math.round(forecastDay.temp.min)}
           </span>
       </div>
   </div>
   </div>`;
+  }
   });
   forecastHTML = `</div>`;
   forecastElement.innerHTML = forecastHTML;
@@ -109,5 +133,4 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemp);
 
-searchCity("Santa Monica");
-displayForecast();
+searchCity("Santa Barbara");
