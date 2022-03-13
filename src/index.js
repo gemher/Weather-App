@@ -44,7 +44,7 @@ function formatDay(timestamp) {
     "WEDNESDAY",
     "THURSDAY",
     "FRIDAY",
-    "SATURDAY"
+    "SATURDAY",
   ];
 
   return days[day];
@@ -56,15 +56,9 @@ function displayForecast(response) {
 
   forecast.forEach(function (forecastDay, index) {
     if (index < 6) {
-function displayForecast(response) {
-  let forecast = response.data.daily;
-  let forecastElement = document.querySelector("#forecast");
-  let forecastHTML = `<div class="row">`;
-
-  forecast.forEach(function (forecastDay) {
-    forecastHTML =
-      forecastHTML +
-      `
+      forecastHTML =
+        forecastHTML +
+        `
       <div class="col-2 days">
       <div class="weather-forecast-date">${forecastDay.dt}</div>
           <span class="forecast-max">
@@ -75,8 +69,8 @@ function displayForecast(response) {
           </span>
       </div>
   </div>
-  </div>`;
-  }
+  `;
+    }
   });
   forecastHTML = `</div>`;
   forecastElement.innerHTML = forecastHTML;
