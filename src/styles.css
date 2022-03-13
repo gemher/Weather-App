@@ -42,11 +42,7 @@ ul {
   text-align: center;
   font-size: smaller;
   background: linear-gradient(to top, #ace0f9 0%, #fff1eb 100%);
-}
-
-.current {
-  text-align: center;
-  padding: 34px 0 0;
+  padding: 20px;
 }
 a {
   text-decoration: none;
