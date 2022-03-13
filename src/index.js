@@ -77,7 +77,6 @@ function displayForecast(response) {
 }
 
 function showTemp(response) {
-  let temperature = Math.round(celsiusTemp);
   let h1 = document.querySelector("#degrees");
   let iconElement = document.querySelector("#icon");
   let descriptionElement = document.querySelector("#description");
@@ -86,7 +85,7 @@ function showTemp(response) {
 
   celsiusTemp = response.data.main.temp;
 
-  h1.innerHTML = `${temperature}ºC`;
+  h1.innerHTML = `${Math.round(celsiusTemp)}ºC`;
   city.innerHTML = response.data.name;
   descriptionElement.innerHTML = response.data.weather[0].description;
   windElement.innerHTML = Math.round(response.data.wind.speed);
@@ -99,32 +98,7 @@ function showTemp(response) {
   getForecast(response.data.coord);
 }
 
-let celsiusTemp = null;
-
 let form = document.querySelector("#city-search-form");
 form.addEventListener("submit", search);
-
-function displayFahrenheitTemp(event) {
-  event.preventDefault();
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-  let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
-  let tempElement = document.querySelector("#degrees");
-  tempElement.innerHTML = Math.round(fahrenheitTemp);
-}
-
-function displayCelsiusTemp(event) {
-  event.preventDefault();
-  celsiusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
-  let tempElement = document.querySelector("#degrees");
-  tempElement.innerHTML = Math.round(celsiusTemp);
-}
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", displayCelsiusTemp);
 
 searchCity("Santa Barbara");
