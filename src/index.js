@@ -54,11 +54,11 @@ function displayForecast(response) {
         `
       <div class="col-2 days">
       <div class="weather-forecast-date">${formatDay(forecastDay.dt)}</div>
-          <span class="forecast-max">
-          ${Math.round(forecastDay.temp.max)}
-          </span>
+          <span class="forecast-max"><strong>
+          ${Math.round(forecastDay.temp.max)}º</strong>
+          </span>|
           <span class="forecast-min">
-          ${Math.round(forecastDay.temp.min)}
+          ${Math.round(forecastDay.temp.min)}º
           </span>
       </div>
   `;
