@@ -49,6 +49,7 @@ function formatDay(timestamp) {
 
   return days[day];
 }
+
 function displayForecast(response) {
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
@@ -68,11 +69,10 @@ function displayForecast(response) {
           ${Math.round(forecastDay.temp.min)}
           </span>
       </div>
-  </div>
   `;
     }
   });
-  forecastHTML = `</div>`;
+  forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
 
